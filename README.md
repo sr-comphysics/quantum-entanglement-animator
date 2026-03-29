@@ -43,7 +43,7 @@ make install
 ```bash
 make run
 ```
-#Finallly open 
+Finallly open 
 http://localhost:5173 in your browser
 
 ###
