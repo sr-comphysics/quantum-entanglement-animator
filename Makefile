@@ -7,7 +7,9 @@ check-venv:
 		echo ""; \
 		echo "⚠️  WARNING: Python virtual environment is NOT activated!"; \
 		echo ""; \
-		echo "Please activate your virtual environment first:"; \
+		echo "It's recommended to use a virtual environment to isolate dependencies."; \
+		echo ""; \
+		echo "To activate your virtual environment:"; \
 		echo ""; \
 		echo "  On macOS/Linux:"; \
 		echo "    source venv/bin/activate"; \
@@ -15,16 +17,22 @@ check-venv:
 		echo "  On Windows:"; \
 		echo "    venv\\Scripts\\activate"; \
 		echo ""; \
-		echo "Then run 'make install' again."; \
-		echo ""; \
-		exit 1; \
+		read -p "Do you want to proceed without activating venv? (y/N): " proceed; \
+		if [ "$$proceed" = "y" ] || [ "$$proceed" = "Y" ]; then \
+			echo ""; \
+			echo "⚠️  Proceeding without virtual environment..."; \
+			echo ""; \
+		else \
+			echo ""; \
+			echo "❌ Installation cancelled. Please activate your venv and try again."; \
+			echo ""; \
+			exit 1; \
+		fi; \
 	fi
 
-# Setup both the environments
+# Setup both environments
 
 install: check-venv
-	@echo "✅ Virtual environment detected!"
-	@echo ""
 	@echo "Installing Frontend Dependencies..."
 	cd frontend && npm install
 	@echo ""
