@@ -1,6 +1,8 @@
-# 🌌 Quantum Entanglement Animator
+# Quantum Protocol & Algorithm Visual Simulator (QTHack04)
 
-A 3D quantum circuit simulator built with React, FastAPI, and Qiskit.
+## Quantum Entanglement Animator
+A visual simulator for quantum protocols and algorithms designed for **QTHack04**. Features **Bloch sphere animations** and **quantum state evolution visualization**. Visualize and simulate **quantum entanglement** between multiple qubits. Watch how entangled particles behave in real-time, explore Bell states, and understand quantum correlations through interactive animations.
+**Features:** Interactive Bloch sphere, measurement probability plots, entanglement visualization.
 
 ## 🚀 Local Setup Instructions
 
